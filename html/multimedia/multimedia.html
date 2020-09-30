@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Multimedia</title>
+		<link rel="stylesheet" href="/html/multimedia/multimedia.css" />
+	</head>
+	<body>
+		<div class="row text-center">
+			<video
+				id="video"
+				width="260"
+				height="450"
+				poster="/html/multimedia/WhatsApp Image 2020-09-30 at 13.16.23.jpeg"
+			>
+				<!--autoplay ; controls; muted; poster; loop -->
+
+				<source
+					src="/html/multimedia/WhatsApp Video 2020-09-30 at 09.59.57.mp4"
+				/>
+
+				Your browser does not support the video tag.
+			</video>
+			<div class="row text-center">
+				<button onclick="play();">Play</button>
+				<button onclick="pause();">Pouse</button>
+				<button onclick="stop();">Stop</button>
+				<input
+					type="range"
+					name=""
+					id="volume"
+					min="0"
+					max="100"
+					value="100"
+					onchange="volume();"
+				/>
+				<button onclick="muted();" id="muted">Muted</button>
+				<button onclick="full();">Full Screen</button>
+			</div>
+		</div>
+		<script src="/html/multimedia/video.js"></script>
+	</body>
+</html>
