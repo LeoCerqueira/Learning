@@ -21,3 +21,7 @@ table {
 tr {
 	border: 1px solid #ddd;
 }
+
+input {
+	margin: 40px auto;
+}

@@ -8,10 +8,36 @@
 	</head>
 	<body>
 		<div>
+			<input type="text" id="search" placeholder="Search..." />
+		</div>
+
+		<div>
+			<iframe
+				onkeyup="search();"
+				id="iframeId"
+				src=""
+				width="560"
+				height="315"
+				style="display: inline-block"
+			></iframe>
+
+			<!--One video with a list of videos on it-->
+
 			<iframe
 				width="560"
 				height="315"
-				src="https://www.youtube.com/embed/xwPnSS702Ow"
+				src="https://www.youtube.com/embed/xwPnSS702Ow?listType=playlist&playlist=-vlz52hzNu4,NA4srP35Maw"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+				allowfullscreen
+			></iframe>
+
+			<!--Up loading a full play list from youtube on the website-->
+
+			<iframe
+				width="560"
+				height="315"
+				src="https://www.youtube.com/embed?listType=playlist&list=PLMdYygf53DP5SVQQrkKCVWDS0TwYLVitL"
 				frameborder="0"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 				allowfullscreen
