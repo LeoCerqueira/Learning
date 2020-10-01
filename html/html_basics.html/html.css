@@ -1,0 +1,16 @@
+/* Way to tell older browsers to work with this new elements of HTML5 */
+
+header,
+section,
+footer,
+nav,
+main,
+article,
+figure {
+	display: block;
+}
+
+main section,
+main aside {
+	display: inline-block;
+}
