@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>HTML 5 Input Types</title>
+		<link rel="stylesheet" href="html.css" />
 	</head>
 	<body>
 		<header>
@@ -27,8 +28,168 @@
 					<label>Email</label>
 					<input type="email" name="" id="" />
 				</div>
+				<div class="form-group">
+					<label>Month</label>
+					<input type="month" name="" id="" />
+				</div>
+				<div class="form-group">
+					<label>Number</label>
+					<input
+						type="number"
+						name=""
+						min="1"
+						max="10"
+						id=""
+						step="2"
+					/>
+				</div>
+				<div class="form-group">
+					<label>Range</label>
+					<input type="text" id="textinput" />
+					<input
+						type="range"
+						name=""
+						min="0"
+						max="10"
+						onchange="updateTextInput(this.value);"
+						id=""
+					/>
+					<script>
+						function updateTextInput(num) {
+							document.getElementById('textinput').value = num;
+						}
+					</script>
+				</div>
+				<div class="form-group">
+					<label>Search</label>
+					<input type="search" name="" id="" />
+				</div>
+				<div class="form-group">
+					<label>Time</label>
+					<input type="time" name="" id="" />
+				</div>
+				<div class="form-group">
+					<label>Url</label>
+					<input type="url" name="" id="" />
+				</div>
+				<div class="form-group">
+					<label>week</label>
+					<input type="week" name="" id="" />
+				</div>
+				<div class="form-group">
+					<label>List</label>
+					<input
+						list="codes"
+						name="code"
+						x-moz-errormessage="Error"
+						title="Customize a part of the error"
+						required
+					/>
+					<datalist id="codes">
+						<option value="JavaScript"></option>
+						<option value="Java"></option>
+						<option value="Ruby"></option>
+					</datalist>
+				</div>
+
 				<button>Submit</button>
 			</form>
+		</section>
+		<section>
+			<h1>Output</h1>
+			<form
+				oninput="x.value=parseInt(a.value ) + parseInt(b.value);"
+				action=""
+			>
+				<input
+					type="range"
+					id="a"
+					name="a"
+					value="50"
+					min="0"
+					max="100"
+				/>
+				+
+				<input type="text" name="b" value="0" />
+				<output name="x"></output>
+			</form>
+		</section>
+		<section>
+			<h1>Autocomplite</h1>
+			<form>
+				<div class="form-group">
+					<input type="text" placeholder="First name" name="fname" />
+				</div>
+				<div class="form-group">
+					<input type="text" placeholder="Last name" name="lname" />
+				</div>
+				<div class="form-group">
+					<input
+						type="email"
+						placeholder="Email"
+						name="email"
+						autocomplete="off"
+					/>
+				</div>
+
+				<button>Submit</button>
+			</form>
+		</section>
+		<section>
+			<h1>The novalidate Attribute and autofocus:</h1>
+			<form>
+				<!-- the novalidate or formnovalidate atributes make you submit the form without validation process -->
+				<div class="form-group">
+					<input
+						type="text"
+						placeholder="First name"
+						name="fname"
+						required
+					/>
+				</div>
+				<div class="form-group">
+					<input
+						type="text"
+						placeholder="Last name"
+						name="lname"
+						required
+					/>
+				</div>
+				<div class="form-group">
+					<input
+						type="email"
+						placeholder="Email"
+						name="email"
+						autocomplete="off"
+						novalidate
+						autofocus
+					/>
+				</div>
+
+				<button>Submit</button>
+			</form>
+		</section>
+		<section>
+			<h1>The form Attribute</h1>
+			<form id="form1" method="GET">
+				<div class="form-group">
+					<input type="text" placeholder="First name" name="fname" />
+				</div>
+				<div class="form-group">
+					<input type="text" placeholder="Last name" name="lname" />
+				</div>
+				<div class="form-group">
+					<input type="email" placeholder="Email" name="email" />
+				</div>
+
+				<button>Submit</button>
+				<button formnovalidate>Submit Novalidate</button>
+				<button formnovalidate formmethod="post">Submit Method</button>
+				<button formnovalidate formaction="post.php">
+					Submit Method
+				</button>
+			</form>
+			<input type="text" name="color" form="form1" required />
 		</section>
 	</body>
 </html>

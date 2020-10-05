@@ -14,3 +14,7 @@ main section,
 main aside {
 	display: inline-block;
 }
+
+.form-group {
+	margin: 15px auto;
+}

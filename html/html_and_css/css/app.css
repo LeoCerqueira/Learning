@@ -1,0 +1,20 @@
+body {
+	font-family: 'Lato', sans-serif;
+}
+
+#header {
+	min-height: 70px;
+	min-height: 55px;
+	height: 55px;
+	padding: 1em 0;
+}
+
+#header .nav {
+	text-align: right;
+}
+
+#header .nav a {
+	text-decoration: none;
+	padding: 0 1em;
+	color: #292929;
+}
