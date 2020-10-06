@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				border: 1px solid red;
+			}
+			/* after a header tag main get the blue border */
+			header + main {
+				border: 5px solid blue;
+			}
+			/* every main after a header receives the blue border */
+			header ~ main {
+				border: 5px solid blue;
+			}
+			/* Ordem dos seletores --- tag <classe <id */
+			a {
+				color: blueviolet;
+			}
+			/* all "a" with "title" attribute receive the changes */
+			a[title='Meu logo'] {
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<header id="header">
+			<div>
+				<div>
+					<a href="" class="logomarca" title="Meu logo">Logomarca</a>
+				</div>
+			</div>
+		</header>
+		<main id="content">
+			<section>
+				<h1 class="logomarca">Conteúdo</h1>
+				<p>Um texto qualquer</p>
+				<a href="" title="vermelho">Um link qualquer </a>
+				<a href="">Outro link qualquer </a>
+			</section>
+		</main>
+		<footer id="footer">
+			<div>
+				<p class="logomarca">&copy; Todos os Direitos reservados</p>
+			</div>
+		</footer>
+	</body>
+</html>
