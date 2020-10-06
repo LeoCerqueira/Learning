@@ -1,0 +1,118 @@
+.section-example {
+	text-align: center;
+	padding-left: 20px;
+}
+
+#corners {
+	border-radius: 25px;
+	background: #0288d1;
+	padding: 20px;
+	width: 200px;
+	height: 80px;
+	display: inline-block;
+}
+
+#corners2 {
+	border-radius: 25px;
+	border: 2px solid #03a9f4;
+	padding: 20px;
+	width: 200px;
+	height: 80px;
+	display: inline-block;
+}
+
+#corners3 {
+	border-radius: 25px;
+	background-image: url('/css/CSS3/IMG_0859.JPG');
+	background-size: contain;
+	background-repeat: no-repeat;
+
+	padding: 20px;
+	width: 200px;
+	height: 80px;
+	display: inline-block;
+}
+
+#borderimg1 {
+	display: inline-block;
+	width: 300px;
+	height: 40px;
+	border: 25px solid transparent;
+	padding: 15px;
+	-webkit-border-image: url('/css/CSS3/download.png') 50 round; /* Safari*/
+	-o-border-image: url('/css/CSS3/download.png') 50 round; /*Opera*/
+	border-image: url('/css/CSS3/download.png') 50 round;
+}
+
+#borderimg2 {
+	display: inline-block;
+	width: 300px;
+	height: 40px;
+	border: 25px solid transparent;
+	padding: 15px;
+	-webkit-border-image: url('/css/CSS3/download.png') 65 stretch; /* Safari*/
+	-o-border-image: url('/css/CSS3/download.png') 65 stretch; /*Opera*/
+	border-image: url('/css/CSS3/download.png') 65 stretch;
+}
+
+#borderimg3 {
+	display: inline-block;
+	width: 300px;
+	height: 40px;
+	border: 25px solid transparent;
+	padding: 15px;
+	-webkit-border-image: url('/css/CSS3/png-transparent-borders-and-frames-frame-star-s-of-blue-stars-blue-color-picture-frame.png')
+		20% round; /* Safari*/
+	-o-border-image: url('/css/CSS3/png-transparent-borders-and-frames-frame-star-s-of-blue-stars-blue-color-picture-frame.png')
+		20% round; /*Opera*/
+	border-image: url('/css/CSS3/png-transparent-borders-and-frames-frame-star-s-of-blue-stars-blue-color-picture-frame.png')
+		20% round;
+}
+
+#borderimg4 {
+	display: inline-block;
+	width: 300px;
+	height: 40px;
+	border: 25px solid transparent;
+	padding: 15px;
+	-webkit-border-image: url('/css/CSS3/png-transparent-borders-and-frames-frame-star-s-of-blue-stars-blue-color-picture-frame.png')
+		30% strech; /* Safari*/
+	-o-border-image: url('/css/CSS3/png-transparent-borders-and-frames-frame-star-s-of-blue-stars-blue-color-picture-frame.png')
+		30% stretch; /*Opera*/
+	border-image: url('/css/CSS3/png-transparent-borders-and-frames-frame-star-s-of-blue-stars-blue-color-picture-frame.png')
+		30% stretch;
+}
+
+#background1 {
+	width: 500px;
+	height: 270px;
+	background-image: url('/css/CSS3/empatiaa.png'),
+		url('/css/CSS3/cadeado00.png'), url('/css/CSS3/gtel.png');
+	background-position: left bottom, right bottom, left top;
+	background-size: 92px, 92px, cover;
+	background-repeat: no-repeat;
+	display: inline-block;
+}
+
+#background2 {
+	padding: 20px;
+	width: 90%;
+	height: 160px;
+	border: 5px solid black;
+	background-image: url('/css/CSS3/empatiaa.png');
+	background-size: 60px;
+	background-repeat: no-repeat;
+	background-origin: content-box; /* starts from the borther, the padding or from the content*/
+	display: inline-block;
+}
+
+#background3 {
+	width: 300px;
+	height: 160px;
+	border: 10px solid black;
+	padding: 35px;
+	background: rgb(107, 167, 163);
+
+	background-clip: content-box; /* starts from the borther, the padding or from the content*/
+	display: inline-block;
+}
