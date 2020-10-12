@@ -1,0 +1,35 @@
+html,
+body {
+	height: 100%;
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#header {
+	display: flex;
+	flex: 1;
+	background: rgb(209, 92, 92);
+	min-height: 3.5em;
+}
+
+#main {
+	display: flex;
+	height: 100%;
+}
+
+.sidebar {
+	flex: 1;
+	background: cadetblue;
+	padding-top: 1em;
+}
+
+.content {
+	flex: 3;
+	background: chocolate;
+	padding-top: 1em;
+}
+
+.container {
+	padding: 0 1.5em;
+}
