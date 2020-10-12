@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			#main {
+				display: grid;
+				grid-template-areas:
+					'nav nav'
+					'sidebar content'
+					'footer footer';
+				gap: 5px;
+				grid-template-columns: 20% 80%;
+			}
+			.grid-item {
+				background-color: #cccccc;
+				padding: 10px;
+			}
+			.nav {
+				grid-area: nav;
+				display: grid;
+				justify-content: center;
+			}
+			.sidebar {
+				grid-area: sidebar;
+				display: grid;
+			}
+
+			.sidebar > ul {
+				display: grid;
+				list-style: none;
+				padding: 0 5px;
+			}
+			.sidebar > ul > li {
+				grid-auto-flow: row;
+				font-size: 1.5rem;
+				font-weight: bold;
+				padding: 1rem;
+			}
+
+			.sidebar > ul > li:hover {
+				text-decoration: underline;
+				cursor: pointer;
+			}
+			.content {
+				grid-area: content;
+				display: grid;
+				grid-template-rows: 1fr 2fr;
+			}
+			.footer {
+				grid-area: footer;
+				display: grid;
+			}
+			.footer .copy {
+				justify-self: start;
+				grid-row: 1;
+			}
+			.footer .year {
+				justify-self: end;
+				grid-row: 1;
+			}
+			.container {
+				display: grid;
+			}
+			.row {
+				display: grid;
+				grid-auto-flow: row;
+			}
+			.column {
+				display: grid;
+				grid-auto-flow: column;
+			}
+			.form {
+				display: grid;
+				column-gap: 5px;
+				row-gap: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<main id="main">
+			<nav class="grid-item nav">
+				<h2>SON</h2>
+			</nav>
+			<aside class="grid-item sidebar">
+				<ul>
+					<li>Menu 1</li>
+					<li>Menu 2</li>
+					<li>Menu 3</li>
+				</ul>
+			</aside>
+			<section class="grid-item content">
+				<h2>Welcome, Leandro</h2>
+				<div class="container">
+					<div class="row">
+						<div class="column">
+							<div class="sub-column">
+								<form action="" class="form">
+									<div class="row">
+										<input type="text" placeholder="Name" />
+									</div>
+									<div class="row">
+										<input type="text" placeholder="Age" />
+									</div>
+									<div class="row">
+										<input
+											type="submit"
+											placeholder="Submit"
+										/>
+									</div>
+								</form>
+							</div>
+							<div class="sub-column"></div>
+						</div>
+						<div class="column"></div>
+					</div>
+				</div>
+			</section>
+			<footer class="grid-item footer">
+				<p class="copy">&copy; Copyright</p>
+				<p class="year">2020</p>
+			</footer>
+		</main>
+	</body>
+</html>
