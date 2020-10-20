@@ -1,3 +1,13 @@
+:root {
+	--cor1: #27ae60;
+
+	--cor2: #2ecc71;
+
+	--cor3: #ffffff;
+
+	--cor4: #000000;
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -7,10 +17,16 @@ a {
 	text-decoration: none;
 }
 
+html,
+body {
+	overflow-y: hidden;
+}
+
 body {
 	font-family: 'Roboto', sans-serif;
 	margin: 0;
 	padding: 0;
+	color: var(--cor4);
 }
 
 h1,
@@ -20,6 +36,54 @@ p {
 	padding: 0;
 }
 
+#elefante {
+	margin-bottom: 15px 0;
+}
+
+main h1,
+main h3,
+main p {
+	margin: 15px;
+}
+
+main,
+footer {
+	transform: translateX(0);
+	transition: transform 0.3s linear;
+}
+
+header {
+	background: var(--cor2);
+	text-align: center;
+	height: 100px;
+	line-height: 100px;
+	transform: translateX(0);
+	transition: transform 0.3s linear;
+}
+header a {
+	color: var(--cor3);
+}
+
+header .menu-icon {
+	position: absolute;
+	top: 35px;
+	left: 30px;
+	width: 35px;
+	height: 28px;
+	display: block;
+	background-color: var(--cor1);
+}
+
+header .menu-icon::before {
+	content: '';
+	display: block;
+	margin: 5px auto;
+	width: 80%;
+	height: 4px;
+	background: var(--cor3);
+	box-shadow: 0 7px 00 var(--cor3), 0 14px 00 var(--cor3);
+}
+
 menu,
 menu ul,
 menu li {
@@ -27,6 +91,40 @@ menu li {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+}
+
+menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 300px;
+	height: 100%;
+	background: var(--cor1);
+	z-index: 1;
+	padding: 15px 0;
+	border: 7px solid var(--cor1);
+	transform: translateX(-300px);
+	transition: transform 0.3s linear;
+}
+
+menu.activated {
+	transform: translateX(0);
+}
+
+header.activated,
+main.activated,
+footer.activated {
+	transform: translateX(300px);
+}
+
+menu li a {
+	display: block;
+	color: var(--cor3);
+	padding: 15px;
+}
+
+menu li a:hover {
+	background-color: var(--cor2);
 }
 
 img.responsive {
@@ -111,10 +209,57 @@ img.responsive {
 	display: grid;
 	grid-template-columns: 33% 33% 33%;
 }
+body {
+}
+
+/* Celular landscape */
+@media (min-width: 576px) {
+	body {
+	}
+}
+
+/* Tablet */
+
+@media (min-width: 768px) {
+	body {
+	}
+}
+
+/* Old monitors */
 
 @media (min-width: 992px) {
+	header .menu-icon {
+		display: none;
+	}
+
+	menu {
+		position: relative;
+		transform: translateX(0);
+		width: 100%;
+		text-align: center;
+		padding: 0;
+	}
+
+	menu li {
+		display: inline-block;
+	}
+
 	.row .col {
 		width: 33%;
 		float: left;
 	}
+	body {
+	}
+}
+
+/* Big monitors 4k .... */
+
+@media (min-width: 1200px) {
+	body {
+	}
+}
+
+/* Print format-Link with print CSS style sheet */
+
+@media print {
 }
