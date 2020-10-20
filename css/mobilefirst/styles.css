@@ -70,7 +70,7 @@ img.responsive {
 	clear: both;
 }
 
-.col {
+.row .col {
 	padding-left: 15px;
 	padding-right: 15px;
 }
@@ -107,8 +107,13 @@ img.responsive {
 	order: 3;
 }
 
+.row-grid {
+	display: grid;
+	grid-template-columns: 33% 33% 33%;
+}
+
 @media (min-width: 992px) {
-	.col {
+	.row .col {
 		width: 33%;
 		float: left;
 	}
