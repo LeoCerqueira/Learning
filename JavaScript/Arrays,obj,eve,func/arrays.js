@@ -13,14 +13,12 @@ let result = arr.concat(arr2);
 
 console.log(result)
 
-// let result = arr.slice(0)
+// let result = arr.slice(0) // remove o ultimo
 // console.log(result)
 
-// arr.splice(1, 2 )
+// arr.splice(1, 2 ) // posição, quantos quer remover, o que quer acrescentar
 // console.log(arr);
 
-//arr.shift();// remove o primeiro
-//arr.shift();// remove o ultimo
 
 
 arr.forEach((val, index) => {
