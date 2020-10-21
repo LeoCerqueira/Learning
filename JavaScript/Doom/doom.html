@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="text">Hello from SON</p>
+    <input type="email" name="email">
+    <script>
+
+       const email = document.getElementsByName('email')
+       console.log(email)
+       
+       let button = document.createElement('button') // variable with a button
+       let attr = document.createAttribute('class') // creating a class atribute
+       let text = document.createTextNode('Button Custom')
+       attr.value = 'customize class' // giving the class a value 
+       button.appendChild(text)
+       button.setAttributeNode(attr) // inserting the class atribute into the button tag
+       document.body.appendChild(button) // inserting the button into the doom
+
+
+
+       document.body.removeChild(document.getElementById('text'))
+
+    </script>
+</body>
+</html>
