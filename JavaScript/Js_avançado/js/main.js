@@ -37,7 +37,11 @@ function setList(list) {
 			list[key].amount +
 			'</td><td>' +
 			formatValue(list[key].value) +
-			'</td><td>Edit | Delete</td></tr>';
+			'</td><td><button class="btn btn-default" onclick="setUpdate(' +
+			key +
+			');">Edit</button> | <button class="btn btn-default" onclick="deleteData(' +
+			key +
+			');">Delet</button></td></tr>';
 	}
 	table += '</tbody>';
 	document.getElementById('listTable').innerHTML = table;
@@ -49,11 +53,71 @@ function formatDesc(desc) {
 	return str;
 }
 
+function formatAmount(amount) {
+	return parseInt(amount);
+}
+
 function formatValue(value) {
 	var str = parseFloat(value).toFixed(2) + '';
 	str = str.replace('.', ',');
-    str = '$ ' + str;
-    return str;
+	str = '$ ' + str;
+	return str;
+}
+
+function addData() {
+	var desc = document.getElementById('desc').value;
+	var amount = document.getElementById('amount').value;
+	var value = document.getElementById('value').value;
+
+	list.unshift({ desc: desc, amount: amount, value: value });
+	setList(list);
+}
+
+function setUpdate(id) {
+	var obj = list[id];
+	document.getElementById('desc').value = obj.desc;
+	document.getElementById('amount').value = obj.amount;
+	document.getElementById('value').value = obj.value;
+	document.getElementById('btnUpdate').style.display = 'inline-block';
+	document.getElementById('btnAdd').style.display = 'none';
+
+	document.getElementById('inputIDUpdate').innerHTML =
+		'<input type="hidden" id="idUpdate" value="' + id + '">';
+}
+
+function resetForm() {
+	document.getElementById('desc').value = '';
+	document.getElementById('amount').value = '';
+	document.getElementById('value').value = '';
+	document.getElementById('btnUpdate').style.display = 'none';
+	document.getElementById('btnAdd').style.display = 'inline-block';
+	document.getElementById('inputIDUpdate').innerHTML = '';
+}
+
+function updateData() {
+	var id = document.getElementById('idUpdate').value;
+	var desc = document.getElementById('desc').value;
+	var amount = document.getElementById('amount').value;
+	var value = document.getElementById('value').value;
+
+	list[id] = { desc: desc, amount: amount, value: value };
+	resetForm();
+	setList(list);
+}
+
+function deleteData(id) {
+	if (confirm('Delete this item?')) {
+		if (id === list.length - 1) {
+			list.pop();
+		} else if (id === 0) {
+			list.shift();
+		} else {
+			var arrAuxIni = list.slice(0, id);
+            var arrAuxEnd = list.slice(id + 1);
+            list = arrAuxIni.concat(arrAuxEnd);
+		}
+		setList(list);
+	}
 }
 
 setList(list);
