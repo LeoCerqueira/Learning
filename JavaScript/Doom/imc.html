@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.error {
+				color: red;
+				padding: 1em 0;
+			}
+			.result {
+				color: green;
+				padding: 1em 0;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>IMC</h1>
+		<input type="text" name="heigth" id="heigth" placeholder="heigth" />
+		<input type="text" name="weigth" id="weigth" placeholder="weigth" />
+		<button id="btnCalc" type="button" onclick="calcIMC()">Calc</button>
+		<div id="result"></div>
+
+		<script>
+			const heigth = document.getElementById('heigth');
+			const weigth = document.getElementById('weigth');
+			const result = document.getElementById('result');
+			const btn = document.getElementById('btnCalc');
+
+			function setStyle() {}
+
+			weigth.style.display = 'block';
+			weigth.style.width = '90%';
+			weigth.style.padding = '.4rem .75rem';
+			weigth.style.fontSize = '1rem';
+			weigth.style.color = '#494949';
+			weigth.style.borderRadius = '0.25rem';
+			weigth.style.border = '1px solid #cecece';
+
+			heigth.style.display = 'block';
+			heigth.style.width = '90%';
+			heigth.style.padding = '.4rem .75rem';
+			heigth.style.fontSize = '1rem';
+			heigth.style.color = '#494949';
+			heigth.style.borderRadius = '0.25rem';
+			heigth.style.border = '1px solid #cecece';
+
+			btnCalc.style.display = 'block';
+			btnCalc.style.fontWeight = '400';
+			btnCalc.style.border = '1px solid transparent';
+			btnCalc.style.padding = '.4rem .75rem';
+			btnCalc.style.fontSize = '1rem';
+			btnCalc.style.borderRadius = '.25rem';
+			btnCalc.style.background = '#0062cc';
+			btnCalc.style.color = '#ffffff';
+
+			function calcIMC() {
+				if (weigth.value == '' || heigth.value == '') {
+					result.innerHTML =
+						'<span class="error">Invalis inputs</span>';
+				}
+				// IMC = weigth / (heigth * heigth)
+
+				const IMC = weigth.value / (heigth.value * heigth.value);
+
+				if (IMC < 18) {
+					result.innerHTML = `<p class="result"> Resultado ${IMC} = Abaixo do peso</p>`;
+				} else if (IMC > 18 && IMC < 25) {
+					result.innerHTML = `<p class="result"> Resultado ${IMC} = Peso ideal</p>`;
+				} else if (IMC > 25 && IMC < 30) {
+					result.innerHTML = `<p class="result"> Resultado ${IMC} = Acima do peso</p>`;
+				} else if (IMC > 30 && IMC < 40) {
+					result.innerHTML = `<p class="result"> Resultado ${IMC} = Muito acima do peso</p>`;
+				} else if (IMC > 40) {
+					result.innerHTML = `<p class="result"> Resultado ${IMC} = Obesidade</p>`;
+				}
+			}
+		</script>
+	</body>
+</html>

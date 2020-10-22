@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn" onclick="clickMe()"
+    >Click me</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function(event){
+            console.log('adasdas')
+        })
+
+
+        // document.body.onload= function(){
+        //     console.log('OnLoad Func')
+        // }
+
+
+        // document.body.onload = function(){
+        //     if(navigator.online){
+        //         alert('Online')
+        //     }else{
+        //         alert('Offline')
+        //     }
+        // }
+
+
+        //first way
+        const button = document.getElementById('btn')
+        // button.onclick()
+
+        //secong way
+        function clickMe(){
+            alert("opa")
+        }
+        button.addEventListener('click', clickMe)
+
+    </script>
+</body>
+</html>
