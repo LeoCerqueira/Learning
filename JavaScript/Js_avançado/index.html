@@ -47,8 +47,8 @@
 						placeholder="Value"
 					/>
 				</div>
-                <span id="btnUpdate" style="display:none;">
-                    <span id="inputIDUpdate"></span>
+				<span id="btnUpdate" style="display: none">
+					<span id="inputIDUpdate"></span>
 					<button onclick="updateData();" class="btn btn-default">
 						Save
 					</button>
@@ -56,13 +56,29 @@
 						Cancel
 					</button>
 				</span>
-				<button id="btnAdd" onclick="addData();" class="btn btn-default">
-					Add
-				</button>
+				<span id="btnAdd"
+					><button onclick="addData();" class="btn btn-default">
+						Add
+					</button>
+					<button onclick="resetForm();" class="btn btn-default">
+						Reset
+					</button>
+					<button onclick="deleteList();" class="btn btn-default">
+						Delete list
+					</button>
+					</span
+				>
 			</div>
-			<span id="errors" style="display:none;"></span>
+			<span id="errors" style="display: none"></span>
 			<table id="listTable" class="table table-striped"></table>
 		</div>
+		<nav class="navbar navbar-default navbar-fixed-bottom">
+			<div class="container">
+				<h4 class="text-center text-success">
+					Total: <span id="totalValue">$ 0,00</span>
+				</h4>
+			</div>
+		</nav>
 
 		<script src="/JavaScript/Js_avançado/js/config.js"></script>
 		<script src="/JavaScript/Js_avançado/js/main.js"></script>

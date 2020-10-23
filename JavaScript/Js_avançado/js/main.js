@@ -23,7 +23,8 @@ function getTotal() {
 	for (var key in list) {
 		total += list[key].value * list[key].amount;
 	}
-	return total;
+	document.getElementById('totalValue').innerHTML = formatValue(total);
+	
 }
 
 function setList(list) {
@@ -45,6 +46,8 @@ function setList(list) {
 	}
 	table += '</tbody>';
 	document.getElementById('listTable').innerHTML = table;
+	getTotal(list);
+	saveListStorage(list);
 }
 
 function formatDesc(desc) {
@@ -65,9 +68,9 @@ function formatValue(value) {
 }
 
 function addData() {
-	if(!validation()){
-        return;
-    }
+	if (!validation()) {
+		return;
+	}
 	var desc = document.getElementById('desc').value;
 	var amount = document.getElementById('amount').value;
 	var value = document.getElementById('value').value;
@@ -96,13 +99,12 @@ function resetForm() {
 	document.getElementById('btnAdd').style.display = 'inline-block';
 	document.getElementById('inputIDUpdate').innerHTML = '';
 	document.getElementById('errors').style.display = 'none';
-
 }
 
 function updateData() {
-	if(!validation()){
-        return;
-    }
+	if (!validation()) {
+		return;
+	}
 	var id = document.getElementById('idUpdate').value;
 	var desc = document.getElementById('desc').value;
 	var amount = document.getElementById('amount').value;
@@ -133,8 +135,8 @@ function validation() {
 	var amount = document.getElementById('amount').value;
 	var value = document.getElementById('value').value;
 	var errors = '';
-	document.getElementById("errors").style.display = "none";
-	
+	document.getElementById('errors').style.display = 'none';
+
 	if (desc === '') {
 		errors += '<p>Fill out description</p>';
 	}
@@ -150,11 +152,12 @@ function validation() {
 	}
 	if (errors != '') {
 		document.getElementById('errors').style.display = 'block';
-		document.getElementById("errors").style.backgroundColor = "rgba(85, 85, 85, 0.3)";
-        document.getElementById("errors").style.color = "white";
-        document.getElementById("errors").style.padding = "10px";
-        document.getElementById("errors").style.margin = "10px";
-        document.getElementById("errors").style.borderRadius = "13px";
+		document.getElementById('errors').style.backgroundColor =
+			'rgba(85, 85, 85, 0.3)';
+		document.getElementById('errors').style.color = 'white';
+		document.getElementById('errors').style.padding = '10px';
+		document.getElementById('errors').style.margin = '10px';
+		document.getElementById('errors').style.borderRadius = '13px';
 
 		document.getElementById('errors').innerHTML =
 			'<h3>Error:</h3>' + errors;
@@ -164,5 +167,26 @@ function validation() {
 	}
 }
 
-setList(list);
-console.log(getTotal(list));
+function deleteList(){
+	if(confirm('Delete this list?')){
+		list = [];
+		setList(list);
+	}
+}
+
+function saveListStorage(list){
+    var jsonStr = JSON.stringify(list);
+    localStorage.setItem("list",jsonStr);
+}
+
+function initListStorage(){
+    var testList = localStorage.getItem("list");
+    if(testList){
+        list = JSON.parse(testList);
+    }
+    setList(list);
+}
+
+
+initListStorage();
+
