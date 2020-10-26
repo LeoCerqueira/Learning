@@ -1,0 +1,43 @@
+.nav-bar(@color_back:rgb(101, 241, 108), @color_text:white, @size_title:20px, @size_desc:14px)
+	when
+    (@size_title >16px) and ( @size_desc <16px) //runs a test . if that is true then the css code will run, if not ture the code is not running
+{
+	width: 100%;
+	height: 80px;
+	background-color: lighten(
+		@color_back,
+		10%
+	); // função lighten para controlar a luz
+	position: relative;
+	min-height: 50px;
+	margin-bottom: round(
+		19.6px/4px
+	); //função round para arredondar o calor que está sendo usado ----
+	// a função ceil retorna o alor aproximado do número inteiro superior
+	//a função floor retorna somete o número antes da vírgula
+	// a função percentage multiplica p número por 100%
+	border: 1px solid @color_back;
+	color: @color_text;
+	h1 {
+		position: relative;
+		margin-top: 14px;
+		margin-left: 20px;
+		margin-bottom: 0;
+		font-size: @size_title;
+	}
+	p {
+		position: relative;
+		font-size: @size_desc;
+
+		margin-top: 0;
+		margin-left: 30px;
+	}
+}
+
+.nav1 {
+	.nav-bar( rgb(46, 44, 179),rgb(230, 230, 246),40px,18px); // darken para escurecer
+}
+
+.nav2 {
+	.nav-bar(rgb(53, 161, 58),rgb(251, 251, 251),40px,14px);
+}
