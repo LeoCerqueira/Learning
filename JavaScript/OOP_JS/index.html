@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<p>OOP JavaScript</p>
+		<script>
+			function Person() {
+				var name;
+				var age;
+				var heigth;
+
+				this.sayHello = function (name) {
+					console.log('Hello ' + name);
+				};
+
+				this.getName = function getName() {
+					return name;
+				};
+
+				this.setName = function setName(_name) {
+					name = _name;
+				};
+
+				this.getAge = function () {
+					return age;
+				};
+
+				this.setAge = function (_age) {
+					age = _age;
+				};
+
+				this.getHeigth = function getHeigth() {
+					return height;
+				};
+
+				this.setHeigth = function setHeigth(_height) {
+					height = _height;
+				};
+            }
+            
+            Person.static_method = function(){
+                console.log('This is my first static method')
+            }
+
+            Person.static_method()
+
+			var leo = new Person();
+			leo.setName('Leo');
+			leo.setAge(29);
+			leo.setHeigth(1.69);
+			leo.sayHello(leo.getName());
+
+			// var vera = new Person();
+			// vera.name = 'vera';
+			// vera.age = 63;
+			// vera.heigth = 1.49;
+
+            // console.log(vera);
+            
+            
+			console.log(leo);
+		</script>
+	</body>
+</html>
