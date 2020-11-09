@@ -7,11 +7,14 @@ var gulp = require('gulp'),
     htmlmin = require('gulp-htmlmin'),
     gls = require('gulp-live-server'),
     jshint = require('gulp-jshint'),
-    stylish = require('jshint-stylish');
+    stylish = require('jshint-stylish'),
+    less = require('gulp-less'),
+    LessPluginCleanCSS = require('less-plugin-clean-css'),
+    cleancss = new LessPluginCleanCSS({ advanced: true });
 
 
 
-gulp.task('default',['sass','js','htmlmin','image','watch','serve']);
+    gulp.task('default',['sass','less','js','htmlmin','image','watch','serve']);
 
 gulp.task('sass', function () {
     return gulp.src('assets/src/sass/**/*.scss')
@@ -48,6 +51,8 @@ gulp.task('watch', function() {
     gulp.watch('assets/src/js/**/*.js',['js']);
     gulp.watch('assets/src/img/*',['image']);
     gulp.watch('_html/**/*.html',['htmlmin']);
+    gulp.watch('assets/src/less/**/*.less',['less']);
+
 });
 gulp.task('serve',function(){
     var server = gls.static('./',8000);
@@ -73,3 +78,10 @@ gulp.task('lint', function() {
       .pipe(jshint())
       .pipe(jshint.reporter(stylish));
   });
+
+  gulp.task('less', function() {
+    return gulp.src('assets/src/less/**/*.less')
+        .pipe(concat('styleLess.min.css'))
+        .pipe(less())
+        .pipe(gulp.dest('assets/css'));
+});
