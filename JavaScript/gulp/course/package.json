@@ -1,4 +1,7 @@
 {
+  "name": "project_leo",
+  "version": "1.0.0",
+  "title": "projetoLeo",
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-htmlmin": "^5.0.1",
@@ -7,5 +10,8 @@
     "gulp-uglify": "^3.0.2",
     "imagemin-pngquant": "^9.0.1",
     "node-sass": "^5.0.0"
+  },
+  "dependencies": {
+    "gulp-live-server": "0.0.31"
   }
 }
