@@ -5,7 +5,10 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
     htmlmin = require('gulp-htmlmin'),
-    gls = require('gulp-live-server');
+    gls = require('gulp-live-server'),
+    jshint = require('gulp-jshint'),
+    stylish = require('jshint-stylish');
+
 
 
 gulp.task('default',['sass','js','htmlmin','image','watch','serve']);
@@ -63,3 +66,10 @@ gulp.task('serve',function(){
     });
 
 });
+
+
+gulp.task('lint', function() {
+    return gulp.src('assests/src/js/*.js')
+      .pipe(jshint())
+      .pipe(jshint.reporter(stylish));
+  });
