@@ -3,14 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Clock from './Clock';
 import Props from './Props';
+import State from './State';
 
 import App from './App';
 import Hello from './Hello';
 import reportWebVitals from './reportWebVitals';
 
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <Props attr="span" attr2="VALUE2" attr3="VALUE3" />
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
+
 ReactDOM.render(
   <React.StrictMode>
-    <Props attr="span" attr2="VALUE2" attr3="VALUE3" />
+    <State />
   </React.StrictMode>,
   document.getElementById('root')
 );
