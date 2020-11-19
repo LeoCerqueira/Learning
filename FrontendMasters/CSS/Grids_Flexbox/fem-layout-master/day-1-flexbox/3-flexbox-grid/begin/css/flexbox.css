@@ -53,6 +53,7 @@ div img {
 		flex: 0 0 92%;
 	}
 	.col-5-2 {
+		flex: 0 0 92%;
 		order: -1;
 	}
 	.col-5-1 {
@@ -80,5 +81,12 @@ div img {
 	.col-5-2 {
 		flex: 0 0 42%;
 		order: 0;
+	}
+	.reverse {
+		flex-direction: row-reverse;
+	}
+	.reverse [class*='col-1'] {
+		margin-left: 0;
+		margin-right: 4%;
 	}
 }
