@@ -15,6 +15,11 @@ let array2 = array.map((value) => {
 	return value * 10;
 });
 
+let array2 = array.map((value) => {
+	return value * 10;
+});
+
+
 // código limpo
 
 array.map((value) => (value > 10 ? 0 : 2));
