@@ -17,9 +17,49 @@
 
 // }
 
-var leo = 'leo';
-(function anotherMe() {
-	var leo = 'Golumn';
-	console.log(leo);
-})();
-console.log(leo);
+// var leo = 'leo';
+// (function anotherMe() {
+// 	var leo = 'Golumn';
+// 	console.log(leo);
+// })();
+// console.log(leo);
+
+
+// var leo = 'leo';
+// {
+// 	let leo = 'Golumn';
+// 	console.log(leo);
+// }
+// console.log(leo);
+
+// function ask(question){
+//     return function waitASec(){
+//         console.log(question);
+//     };
+// }
+
+// var myQuestion = ask("What is closure?");
+
+// var leo = {
+//     name: "Leo",
+//     ask(question){
+//         console.log(this.name, question);
+//     },
+// };
+
+// leo.ask("você está aí?")
+
+ class Player {
+     constructor(name){
+         this.name = name;
+     }
+     say(nick){
+         console.log(`${this.name } is playing with ${nick}`);         
+     }
+ }
+
+ var Leo = new Player("Leo");
+ var Ariel = new Player("Ariel");
+
+ Leo.say("Golumn")
+ Ariel.say("Farah")
