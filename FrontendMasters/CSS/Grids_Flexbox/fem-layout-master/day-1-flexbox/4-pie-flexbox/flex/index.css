@@ -1,0 +1,158 @@
+@charset "UTF-8";
+html {
+	box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+body {
+	font-family: 'Cabin', Arial, Geneva, sans-serif;
+	background-image: url(../begin/img/clouds.png);
+	margin: 0px;
+	padding: 0px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Niconne', cursive;
+	font-weight: normal;
+	color: #c80060;
+}
+
+.main {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+nav {
+	background: url(../begin/img/scallop.png) repeat-x;
+	height: 60px;
+	display: flex;
+	align-items: stretch;
+}
+
+nav ul {
+	list-style-type: none;
+	background-color: #e6bf98;
+	padding: 0.75em;
+	margin: 12px 0 0 0;
+	border-bottom: 3px solid #cc8850;
+	overflow: auto;
+	display: block;
+	width: 100%;
+}
+
+nav ul li {
+	display: inline;
+	margin-left: 2%;
+}
+
+nav a {
+	color: #c80060;
+	text-decoration: none;
+}
+nav a:hover {
+	color: #00c4c7;
+}
+
+.d-flex {
+	display: flex;
+}
+
+main.main {
+	background-color: #fff6e0;
+	border-radius: 0 0 10px 10px;
+}
+
+.m-3 {
+	margin: 3%;
+}
+
+.flex-75 {
+	flex: 68.25%;
+}
+
+.flex-25 {
+	flex: 22.75%;
+}
+
+.pd-1 {
+	padding: 1em 0 0 1em;
+}
+
+.bd-rad-10 {
+	border-radius: 10px;
+}
+
+.merlieeImg {
+	margin-top: 1em;
+	margin-left: 0.5em;
+	width: 100%;
+	max-width: 250px;
+}
+
+footer.main {
+	color: white;
+	text-align: center;
+	background-color: #00cdd1;
+}
+
+.footer-number {
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	text-decoration-style: solid;
+	color: white;
+}
+
+hr {
+	border: none;
+	border-top: 1px dotted #c80060;
+	color: #fff;
+	background-color: #fff;
+	height: 1px;
+	margin-top: -10px;
+}
+
+.testimonials-01 {
+	border-radius: 10px;
+	border: solid 1px #00c4c7;
+}
+
+.testimonials-01 h3 {
+	color: white;
+	background-color: #00c4c7;
+	margin: 0;
+	padding: 0 0 0 2em;
+	height: 35px;
+	align-items: center;
+	display: flex;
+}
+
+.testimonials-02 {
+	border-radius: 10px;
+	border: solid 1px #c80060;
+	margin-top: 10px;
+}
+
+.testimonials-02 h3 {
+	color: white;
+	background-color: #c80060;
+	margin: 0;
+	padding: 0 0 0 2em;
+	height: 35px;
+	align-items: center;
+	display: flex;
+	border-radius: 10px 10px 0 0;
+}
+
+.testimonials-02 img {
+	width: 100%;
+	height: auto;
+	border-radius: 0 0 10px 10px;
+}
