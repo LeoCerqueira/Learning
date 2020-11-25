@@ -19,20 +19,23 @@ class Bookshelf {
 
 
 
-function loadBooks(theBookshelf) {	
+function loadBooks(Bookshelfs) {	
 
-	fakeAjax(BOOK_API,function onBooks(bookNames){
-		for(let bookName of bookNames){
-			theBookshelf.addFavoriteBook(bookName);
+	fakeAjax(BOOK_API,function callBack(Books) {
+		for(let book of Books){
+			Bookshelfs.addFavoriteBook(book);
 		}
-		theBookshelf.printFavoriteBooks();
+		Bookshelfs.printFavoriteBooks();
 	})
+
+
 	
 }
 
 var BOOK_API = "https://some.url/api";
-var myBooks = new Bookshelf();
-loadBooks(myBooks)
+var mybook = new Bookshelf;
+loadBooks(mybook)
+
 
 // ***********************
 
