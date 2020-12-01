@@ -1,21 +1,21 @@
 /* Border box declaration 
 https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
 html {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 /* inherit border-box on all elements in the universe and before and after
  */
-*, 
-*:before, 
+*,
+*:before,
 *:after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 body {
 	font-family: Arial, Geneva, sans-serif;
 }
 a {
-	color: #2772B0;
+	color: #2772b0;
 }
 .wrapper {
 	width: 97%;
@@ -23,24 +23,20 @@ a {
 	margin: 0 auto;
 	float: none;
 	background-color: #fff;
+	display: grid;
+	grid-gap: 2%;
 }
 /* hack to make images flexible in our prototype */
 div img {
 	width: 100%;
-	max-width: 250px; 
+	max-width: 250px;
 }
 /* grid system */
-.row {
-	display: flex;
-	flex-flow: row wrap;
-	flex: 0 1 auto;
-}
-[class*="col-"] {
-	flex: 0 0 92%;
-	margin: 0 4%;
-}
-.col-1-2,
-.col-1-4 {
+
+.r1c1,
+.r1c2,
+.r1c3,
+.r1c4 {
 	background-color: #ffc;
 }
 .col-2,
@@ -54,61 +50,37 @@ div img {
 	background-color: #cff;
 }
 
-/* global alignment options */
-.reverse {
-	flex-direction: row-reverse;
-}
-
 /* Mobile Landscape Screen Sizes */
-@media only screen and (min-width: 480px)  {
-	[class*='col-']{
-		margin-left: 4%;
-		margin-right: 0%;
-	}
-	.col-1-2,
-	.col-2 {
-		flex: 0 0 44%; 
-	}
-	.col-1-4,
-	.col-3,
-	.col-4,
-	.col-2-4 {
-		flex: 0 0 92%;
-	}
-	.reverse [class*='col-'] {
-		margin-left: 0%;
-		margin-right: 4%;
+@media only screen and (min-width: 480px) {
+	.wrapper {
+		grid-template-columns: repeat(4, 1fr);
 	}
 
-
+	.r1c1 {
+		grid-column: 1/3;
+	}
+	.r1c2 {
+		grid-column: 3/5;
+	}
+	.r1c3 {
+		grid-column: 1/3;
+	}
+	.r1c4 {
+		grid-column: 3/5;
+	}
 }
 /* Desktop screen Sizes */
 @media only screen and (min-width: 768px) {
-	.col-1-2,
-	.col-1-4 {
-		flex: 0 0 20%;
+	.r1c1 {
+		grid-column: 1/2;
 	}
-	.col-2,
-	.col-2-4 {
-		flex: 0 0 44%;
+	.r1c2 {
+		grid-column: 2/3;
 	}
-	.col-3 {
-		flex: 0 0 68%;
+	.r1c3 {
+		grid-column: 3/4;
 	}
-	.col-4 {
-		flex: 0 0 92%;
-	}
-	.order-first {
-		order: 1;
-	}	
-	.order-second {
-		order: 2;
-	}
-	.order-third {
-		order: 3;
-	}
-	.order-fourth {
-		order: 4;
+	.r1c4 {
+		grid-column: 4/5;
 	}
 }
-
