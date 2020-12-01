@@ -1,0 +1,28 @@
+.main {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	display: flex;
+	flex-flow: row wrap;
+}
+li {
+	flex: 0 0 100%;
+}
+img {
+	width: 100%;
+}
+@media (min-width: 605px) {
+	li {
+		flex: 0 0 50%;
+	}
+}
+@media (min-width: 910px) {
+	li {
+		flex: 0 0 33%;
+	}
+}
+.text {
+	display: block;
+	width: 100%;
+	margin: 40px 30px;
+}

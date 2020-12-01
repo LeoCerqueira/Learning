@@ -1,52 +1,62 @@
 /* Based on "Composition II in Red, Blue, and Yellow," by Piet Mondrian (1930): https://en.wikipedia.org/wiki/Piet_Mondrian */
 .wrapper {
-  width: 633px;
-  height: 458px;
-  background: url(mondrian2.png) no-repeat;
- 
+	width: 633px;
+	height: 458px;
+
+	display: grid;
+	grid-template-columns: 301px 86px 151px;
+	grid-template-rows: 72px 74px 52px 79px;
+	grid-gap: 9px;
+	background-color: black;
 }
 div {
 	border: 1px solid black;
 	background-color: white;
-	opacity: 0.5;
+	opacity: 1;
 }
 .a {
-
+	grid-column: 1/2;
+	grid-row: 1/5;
+	background-color: rgb(235, 7, 7);
 }
 .b {
-
+	grid-column: 2/3;
+	grid-row: 1/2;
+	background-color: rgb(216, 216, 5);
 }
 .c {
-
+	grid-column: 3/4;
+	grid-row: 1/3;
 }
 .d {
-
+	grid-column: 4/5;
+	grid-row: 1/2;
+	background-color: rgb(235, 7, 7);
 }
 .e {
-
+	grid-column: 2/3;
+	grid-row: 2/5;
 }
 .f {
-
+	grid-column: 3/4;
+	grid-row: 3/4;
+	background-color: rgb(22, 22, 172);
 }
 .g {
-	
+	grid-column: 4/5;
+	grid-row: 2/4;
 }
 .h {
-	
+	grid-column: 1/2;
+	grid-row: 5/6;
 }
 .i {
-	
+	grid-column: 2/3;
+	grid-row: 5/6;
+	background-color: rgb(22, 22, 172);
 }
 .j {
-	
+	grid-column: 3/5;
+	grid-row: 4/6;
+	background-color: rgb(216, 216, 5);
 }
-
-
-
-
-
-
-
-
-
-
