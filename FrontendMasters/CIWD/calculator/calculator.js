@@ -1,8 +1,6 @@
-let result = document.querySelector('.result'); // screen
+let result = document.querySelector('.result'); // screen value
 let equal = 0;
-let tempVar = 0;
-let tempVar1 = 0;
-let confirmation = false;
+
 
 //----------add to the Screen
 
@@ -31,6 +29,8 @@ document.querySelector('.erase').addEventListener('click', function () {
 	}
 });
 
+//------------------Simbols
+
 document.querySelector('.aside').addEventListener('click', function (event) {
 	if (event.target.innerText.length == 1 && result.innerText != 0) {
 		let operator = event.target.innerText;
@@ -51,6 +51,8 @@ document.querySelector('.aside').addEventListener('click', function (event) {
 		}
 	}
 });
+
+// ------------------ Equal btn
 
 document.querySelector('.equal').addEventListener('click', function () {
 	equal = result.innerText;
