@@ -28,33 +28,23 @@ function scheduleMeeting(startTime, durationMinutes) {
 		finalMinutes = minutes;
 	}
 
-	if (hourScheduleStarts < hourStart || hourScheduleStarts > hourEnd) {
-		console.log('false');
-	} else if (
-		(hourScheduleStarts = hourStart) &&
-		minScheduleStarts < minuteStart
-	) {
-		console.log('false');
-	} else if (
-		(hourScheduleStarts = hourEnd) &&
-		minScheduleStarts > minuteEnd
-	) {
-		console.log('false');
-	} else if (finalHour < hourStart || finalHour > hourEnd) {
-		console.log('false');
-	} else if ((finalHour = hourStart) && finalMinutes < minuteStart) {
-		console.log('false');
-	} else if ((finalHour = hourEnd) && finalMinutes > minuteEnd) {
-		console.log('false');
-	} else {
+
+
+	if (((hourScheduleStarts >= hourStart && minScheduleStarts >= minuteStart) ||(hourScheduleStarts > 7))&&((finalHour <= hourEnd &&
+		finalMinutes <= minuteEnd )||(finalHour < 16 ))) {
 		console.log('true');
+		return
+	} else {
+		console.log(
+			'false',
+			hourScheduleStarts,
+			minScheduleStarts,
+			finalHour,
+			finalMinutes,
+			hourEnd,
+			minuteEnd
+		);
 	}
-
-	//console.log(finalHour,finalMinutes)
-
-	//console.log(hourScheduleStart,minScheduleStart,durationMin, minutes)
-
-	// Conditions for the schedule not to be
 }
 
 scheduleMeeting('7:00', 15); // false
