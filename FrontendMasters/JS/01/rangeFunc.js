@@ -8,7 +8,7 @@ function range(start, end) {
 	return array;
 }
 
-console.log(range(3, 9));
+console.log(range(3, 8));
 
 function start3(number) {
     
