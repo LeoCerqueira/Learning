@@ -10,7 +10,7 @@ class components {
 	}
 }
 
-let setup = ['Notebook', 'Monitors', 'Desk', 'Chair','Keyboard'];
+let setup = ['Notebook', 'Monitors', 'Desk', 'Chair','Keyboard','chair'];
 
 var leandro = new components(setup);
 leandro.putIntoTheList();
