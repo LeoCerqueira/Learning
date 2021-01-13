@@ -41,6 +41,6 @@ aside {
 	.wrapper {
 		grid-template-areas: 
 			    "header header header header"
-			    "sidebar . article article";
+			    "sidebar sidebar article article";
 	}
 }
