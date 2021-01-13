@@ -185,10 +185,7 @@ footer a {
     width: auto;
     padding: 0;
   }
-  .content {
-       grid-template-columns: 3fr 1fr;
-       grid-gap: 3em;
-    }
+  
   .aside {
     display: block;
   }
