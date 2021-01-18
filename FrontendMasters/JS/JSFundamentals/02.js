@@ -10,7 +10,10 @@ game.name = [];
 game.name[0] = 'Miss Scarlet';
 game.name.push('Mr. Green');
 
-console.log(game.weapons[0]);
+//console.log(game.weapons[0]);
 
 var [first, last] = ['Leandro', 'Cerqueira'];
-console.log(first);
+//console.log(first);
+
+const { eu, voce } = { eu: 'leo', voce: 'ela' };
+console.log(eu);
