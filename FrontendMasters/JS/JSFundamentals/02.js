@@ -17,3 +17,4 @@ var [first, last] = ['Leandro', 'Cerqueira'];
 
 const { eu, voce } = { eu: 'leo', voce: 'ela' };
 console.log(eu);
+ 
