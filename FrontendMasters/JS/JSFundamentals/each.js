@@ -54,7 +54,7 @@ _.each = function(list, callback) {
     }
 }
 
-_.each(['sally', 'georgie', 'porgie']),
+_.each(['sally', 'georgie', 'porgie', 'sarah']),
 
     function(name, i, list) {
 
