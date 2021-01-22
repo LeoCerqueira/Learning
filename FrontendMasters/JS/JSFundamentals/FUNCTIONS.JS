@@ -1,65 +1,15 @@
-//definition
-//arrow functions 
+const contructArr = function (){
+    const arr = Array.prototype.slice.call(arguments);
+    arr.push('the biliards room?');
+    return arr.join(' ');
+};
+let frase = contructArr('was', 'it','in');
+console.log(frase);
 
-const videoData = [
-    {
-        name: 'Miss Scarlet',
-        present: true,
-        rooms: [
-            {kitchen: false},
-            {ballroom: false},
-            {conservatory: false},
-            {'dining room': false},
-            {'billiard room': false},
-            {library: false}
-        ]
-    },
-    {
-        name: 'Mrs. White',
-        present: false,
-        rooms: [
-            {kitchen: false},
-            {ballroom: false},
-            {conservatory: false},
-            {'dining room': false},
-            {'billiard room': false},
-            {library: false}
-        ]
-    },
-    {
-        name: 'Reverend Green',
-        present: true,
-        rooms: [
-            {kitchen: false},
-            {ballroom: false},
-            {conservatory: false},
-            {'dining room': false},
-            {'billiard room': false},
-            {library: false}
-        ]
-    },
-    {
-        name: 'Rusty',
-        present: false,
-        rooms: [
-            {kitchen: false},
-            {ballroom: false},
-            {conservatory: false},
-            {'dining room': false},
-            {'billiard room': false},
-            {library: false}
-        ]
-    },
-    {
-        name: 'Colonel Mustard',
-        present: true,
-        rooms: [
-            {kitchen: false},
-            {ballroom: false},
-            {conservatory: false},
-            {'dining room': false},
-            {'billiard room': false},
-            {library: false}
-        ]
-    }
-]
+const contructArray = function (){
+    const arr = Array.from(arguments);
+    arr.push('the biliards room?');
+    return arr.join(' ');
+};
+let fraseWithFrom = contructArray('was', 'it','in');
+console.log(fraseWithFrom);
