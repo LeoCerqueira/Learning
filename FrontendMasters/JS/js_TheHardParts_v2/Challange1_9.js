@@ -3,18 +3,13 @@ function objOfMatches(array1, array2, callback) {
 }
 
 function newObj(arr1, arr2) {
-
-    obj
-	
-
-	
+	var obj = {};
 
 	for (let i = 0; i < arr1.length; i++) {
-
-        new Object
-		
+		obj.key() = arr1;
+		obj.value() = arr2;
 	}
-    
+	return obj;
 }
 
 console.log(
