@@ -1,21 +1,19 @@
 function objOfMatches(array1, array2, callback) {
-	callback(array1, array2);
-}
-
-function newObj(arr1, arr2) {
-	var obj = {};
-
-	for (let i = 0; i < arr1.length; i++) {
-		obj.key() = arr1;
-		obj.value() = arr2;
+	const matchObj = {};
+	for (let i = 0; i < array1.length; i++) {
+		if (callback(array1[i]) === array2[i]) {
+			matchObj[array1[i]] = array2[i];
+		}
 	}
-	return obj;
+	return matchObj;
 }
 
 console.log(
 	objOfMatches(
 		['hi', 'howdy', 'bye', 'later', 'hello'],
 		['HI', 'Howdy', 'BYE', 'LATER', 'hello'],
-		newObj
+		function (str) {
+			return str.toUpperCase();
+		}
 	)
 );
