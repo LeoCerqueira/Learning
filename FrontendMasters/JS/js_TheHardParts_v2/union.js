@@ -13,7 +13,7 @@ function union(arrays) {
 		}
     }
     var finalArray = [...new Set(tempArray)]
-    console.log(finalArray.sort(function(a, b){return a-b}));
+    console.log(finalArray);
 }
 
 union(mainArr)
