@@ -20,7 +20,7 @@ function groupBy(array, callback) {
 	return newObj;
 }
 
-const decimals = [1.3, 2.1, 2.4];
+const decimals = [1.3, 2.1, 2.4,3.2,3.6,4.1];
 const floored = function (num) {
 	return Math.floor(num);
 };
