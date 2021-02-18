@@ -2,7 +2,7 @@
 
 function delayedGreet() {
 	function greet() {
-		console.log('welcome');
+		console.log(' be welcome');
 	}
 
 	setTimeout(greet, 3000);
