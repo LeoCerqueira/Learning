@@ -1,13 +1,21 @@
-let arr = ['el1', 'el2', 'el3'];
+function userCreator(name, score){
+  
+  this.name = name;
+  this.score = score;
+  
 
-arr.addedProp = 'arrProp';
 
-// elKey are the property keys
-for (let elKey in arr) {
-  console.log(elKey);
 }
 
-// elValue are the property values
-for (let elValue of arr) {
-  console.log(elValue)
-}
+userCreator.prototype.increment = function(){this.score++;};
+userCreator.prototype.login = function(){console.log('login');};
+
+const user1 = new userCreator('leo', 1);
+const user2 = new userCreator('Nadja', 3);
+
+
+user2.increment();
+user2.login();
+
+console.log(user2.score)
+
