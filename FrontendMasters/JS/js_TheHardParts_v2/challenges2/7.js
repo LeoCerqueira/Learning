@@ -6,7 +6,7 @@ function rollCall(names) {
 }
 
 /*** Uncomment these to check your work! ***/
-const rollCaller = rollCall(['Victoria', 'Juan', 'Ruth']);
+const rollCaller = rollCall(['Victoria', 'Juan', 'Ruth','Andrea']);
 rollCaller(); // => should log 'Victoria'
 rollCaller(); // => should log 'Juan'
 rollCaller() // => should log 'Ruth'
