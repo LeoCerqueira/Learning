@@ -11,7 +11,7 @@ function objOfMatches(array1, array2, callback) {
 console.log(
 	objOfMatches(
 		['hi', 'howdy', 'bye', 'later', 'hello'],
-		['HI', 'Howdy', 'BYE', 'LATER', 'hello'],
+		['HI', 'HOwdy', 'BYE', 'LATER', 'hello'],
 		function (str) {
 			return str.toUpperCase();
 		}
