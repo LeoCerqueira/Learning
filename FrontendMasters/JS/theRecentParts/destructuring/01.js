@@ -4,9 +4,7 @@ function data() {
 
 var tmp = data();
 
-var o = [];
-
-o[0] = tmp[0];
-o[1] = tmp[1];
-o[2] = tmp[2];
-o[3] = tmp.slice(3);
+var first = tmp[0];
+var second = tmp[1];
+var thirs = tmp[2];
+var fourth = tmp.slice(3);
