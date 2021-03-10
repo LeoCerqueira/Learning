@@ -1,45 +1,49 @@
-var defaults = {
-	topic: "JavaScript",
-	format: "Live",
-	slides: {
-		start: 0,
-		end: 100
-	}
-};
+// var defaults = {
+// 	topic: "JavaScript",
+// 	format: "Live",
+// 	slides: {
+// 		start: 0,
+// 		end: 100
+// 	}
+// };
 
-fakeAjax("http://get-the-workshop.tld",handleResponse);
-
+fakeAjax('http://get-the-workshop.tld', handleResponse);
 
 // *******************************************************
 
-
-function handleResponse(/* destructuring here */) {
-
+function handleResponse(
+	{
+		topic = 'Javascript',
+		format = 'Live',
+		slides: { start = 0, end = 100 },
+		...otherProps
+	} = {}
+) {
 	TestCase({
-		/* restructuring here */
+		topic,
+		format,
+		slides: { start, end },
+		...otherProps,
 	});
-
 }
 
 function TestCase(data) {
 	console.log(
-		data.topic == "JS Recent Parts" &&
-		data.format == "Live" &&
-		data.slides.start === 0 &&
-		data.slides.end == 77
+		data.topic == 'JS Recent Parts' &&
+			data.format == 'Live' &&
+			data.slides.start === 0 &&
+			data.slides.end == 77
 	);
 }
 
-
 // *******************************************************
 
-
-function fakeAjax(url,cb) {
+function fakeAjax(url, cb) {
 	// fake ajax response:
 	cb({
-		topic: "JS Recent Parts",
+		topic: 'JS Recent Parts',
 		slides: {
-			end: 77
-		}
+			end: 77,
+		},
 	});
 }
