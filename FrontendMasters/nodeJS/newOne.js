@@ -1,1 +1,1 @@
-console.log('helolo from node')
+console.log(process)
