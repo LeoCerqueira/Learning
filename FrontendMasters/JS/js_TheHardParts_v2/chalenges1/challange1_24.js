@@ -14,6 +14,6 @@ function addToSum(num) {
 }
 
 /*** Uncomment these to check your work! ***/
-const nums = [1, 2, 3];
+const nums = [1, 2, 3, 4];
 myForEach(nums, addToSum);
 console.log(sum); // Should output 6
