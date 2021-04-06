@@ -1,7 +1,7 @@
 /* CHALLENGE 4 */
 
 function brokenRecord() {
-	console.log('hi again');
+	console.log('hi again, hello');
 
 	setTimeout(brokenRecord, 1000);
 }
