@@ -9,19 +9,19 @@ function censor() {
 			var newString;
 			for (const key in newObj) {
 				newString = firstString.replace(key, newObj[key]);
-                firstString = newString;
-                
-                
+				firstString = newString;
+
+
 
 			}
-            return newString;
-			
+			return newString;
+
 		}
 	};
 }
 
 /*** Uncomment these to check your work! ***/
 const changeScene = censor();
-changeScene('doggs', 'catts');
+changeScene('dogggs', 'catts');
 changeScene('quick', 'slow');
 console.log(changeScene('The quick, brown fox jumps over the lazy dogs.')); // => should log 'The slow, brown fox jumps over the lazy cats.'
