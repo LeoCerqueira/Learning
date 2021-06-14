@@ -1,0 +1,101 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require("react");
+  var _reactRouterDom = require("react-router-dom");
+  var _Carousel = require("./Carousel");
+  var _CarouselDefault = _parcelHelpers.interopDefault(_Carousel);
+  var _jsxFileName = "C:\\Users\\ll_ce\\Documents\\Léo\\Programação\\Studying\\FrontendMasters\\reaact!\\complete intro v6\\ADOPT-ME\\citr-v6-project\\09-managing-state-in-class-components\\src\\Details.js";
+  class Details extends _react.Component {
+    state = {
+      loading: true
+    };
+    async componentDidMount() {
+      const res = await fetch(`http://pets-v2.dev-apis.com/pets?id=${this.props.match.params.id}`);
+      const json = await res.json();
+      this.setState(Object.assign({
+        loading: false
+      }, json.pets[0]));
+    }
+    render() {
+      if (this.state.loading) {
+        return (
+          /*#__PURE__*/React.createElement("h2", {
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 18,
+              columnNumber: 14
+            }
+          }, "loading … ")
+        );
+      }
+      const {animal, breed, city, state, description, name, images} = this.state;
+      return (
+        /*#__PURE__*/React.createElement("div", {
+          className: "details",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 32,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/React.createElement(_CarouselDefault.default, {
+          images: images,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 33,
+            columnNumber: 9
+          }
+        }), /*#__PURE__*/React.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 34,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/React.createElement("h1", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 35,
+            columnNumber: 11
+          }
+        }, name), /*#__PURE__*/React.createElement("h2", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 36,
+            columnNumber: 11
+          }
+        }, `${animal} — ${breed} — ${city}, ${state}`), /*#__PURE__*/React.createElement("button", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 37,
+            columnNumber: 11
+          }
+        }, "Adopt ", name), /*#__PURE__*/React.createElement("p", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 38,
+            columnNumber: 11
+          }
+        }, description)))
+      );
+    }
+  }
+  exports.default = _c = _reactRouterDom.withRouter(Details);
+  var _c;
+  $RefreshReg$(_c, "%default%");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

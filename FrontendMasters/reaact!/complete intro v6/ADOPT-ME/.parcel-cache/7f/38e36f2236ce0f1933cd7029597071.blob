@@ -1,0 +1,62 @@
+"use strict";
+var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports["default"] = void 0;
+  var _react = _interopRequireDefault(require("react"));
+  var _reactRouterDom = require("react-router-dom");
+  var _jsxRuntime = require("react/jsx-runtime");
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+      "default": obj
+    };
+  }
+  // const Pet = (props) => {
+  // return React.createElement("div", {}, [
+  // React.createElement("h2", {}, props.name),
+  // React.createElement("h3", {}, props.animal),
+  // React.createElement("h3", {}, props.breed),
+  // ]);
+  // };
+  var Pet = function Pet(_ref) {
+    var name = _ref.name, animal = _ref.animal, breed = _ref.breed, images = _ref.images, location = _ref.location, id = _ref.id;
+    var hero = "http://pets-images.dev-apis.com/pets/none.jpg";
+    if (images.length) {
+      hero = images[0];
+    }
+    return (
+      /*#__PURE__*/(0, _jsxRuntime.jsxs)(_reactRouterDom.Link, {
+        to: ("/details/").concat(id),
+        className: "pet",
+        children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+          className: "image-container",
+          children: /*#__PURE__*/(0, _jsxRuntime.jsx)("img", {
+            src: hero,
+            alt: name
+          })
+        }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+          className: "info",
+          children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("h1", {
+            children: name
+          }), /*#__PURE__*/(0, _jsxRuntime.jsx)("h2", {
+            children: ("").concat(animal, " - ").concat(breed, " - ").concat(location)
+          })]
+        })]
+      })
+    );
+  };
+  _c = Pet;
+  var _default = Pet;
+  exports["default"] = _default;
+  var _c;
+  $RefreshReg$(_c, "Pet");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

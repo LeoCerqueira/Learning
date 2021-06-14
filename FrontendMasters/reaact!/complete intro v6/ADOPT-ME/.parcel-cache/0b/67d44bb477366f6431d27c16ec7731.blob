@@ -1,0 +1,75 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require("react");
+  var _jsxFileName = "C:\\Users\\ll_ce\\Documents\\Léo\\Programação\\Studying\\FrontendMasters\\reaact!\\complete intro v6\\ADOPT-ME\\citr-v6-project\\09-managing-state-in-class-components\\src\\Carousel.js";
+  class Carousel extends _react.Component {
+    state = {
+      active: 0
+    };
+    static defaultProps = {
+      images: ["http://pets-images.dev-apis.com/pets/none.jpg"]
+    };
+    handleIndexClick = event => {
+      this.setState({
+        active: +event.target.dataset.index
+      });
+    };
+    render() {
+      const {active} = this.state;
+      const {images} = this.props;
+      return (
+        /*#__PURE__*/React.createElement("div", {
+          className: "carousel",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 22,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/React.createElement("img", {
+          src: images[active],
+          alt: "animal",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 23,
+            columnNumber: 9
+          }
+        }), /*#__PURE__*/React.createElement("div", {
+          className: "carousel-smaller",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 24,
+            columnNumber: 9
+          }
+        }, images.map((photo, index) => /*#__PURE__*/
+        // eslint-disable-next-line
+        React.createElement("img", {
+          key: photo,
+          src: photo,
+          onClick: this.handleIndexClick,
+          "data-index": index,
+          className: index === active ? "active" : "",
+          alt: "animal thumbnail",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 27,
+            columnNumber: 13
+          }
+        }))))
+      );
+    }
+  }
+  exports.default = Carousel;
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

@@ -1,0 +1,170 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require("react");
+  var _useBreedList = require("./useBreedList");
+  var _useBreedListDefault = _parcelHelpers.interopDefault(_useBreedList);
+  var _Results = require("./Results");
+  var _ResultsDefault = _parcelHelpers.interopDefault(_Results);
+  var _jsxFileName = "C:\\Users\\ll_ce\\Documents\\Léo\\Programação\\Studying\\FrontendMasters\\reaact!\\complete intro v6\\ADOPT-ME\\citr-v6-project\\09-managing-state-in-class-components\\src\\SearchParams.js", _s = $RefreshSig$();
+  const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
+  const SearchParams = () => {
+    _s();
+    const [animal, updateAnimal] = _react.useState("");
+    const [location, updateLocation] = _react.useState("");
+    const [breed, updateBreed] = _react.useState("");
+    const [pets, setPets] = _react.useState([]);
+    const [breeds] = _useBreedListDefault.default(animal);
+    _react.useEffect(() => {
+      requestPets();
+    }, []);
+    // eslint-disable-line react-hooks/exhaustive-deps
+    async function requestPets() {
+      const res = await fetch(`http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`);
+      const json = await res.json();
+      setPets(json.pets);
+    }
+    return (
+      /*#__PURE__*/React.createElement("div", {
+        className: "search-params",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 28,
+          columnNumber: 5
+        }
+      }, /*#__PURE__*/React.createElement("form", {
+        onSubmit: e => {
+          e.preventDefault();
+          requestPets();
+        },
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 29,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/React.createElement("label", {
+        htmlFor: "location",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 35,
+          columnNumber: 9
+        }
+      }, "Location", /*#__PURE__*/React.createElement("input", {
+        id: "location",
+        value: location,
+        placeholder: "Location",
+        onChange: e => updateLocation(e.target.value),
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 37,
+          columnNumber: 11
+        }
+      })), /*#__PURE__*/React.createElement("label", {
+        htmlFor: "animal",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 44,
+          columnNumber: 9
+        }
+      }, "Animal", /*#__PURE__*/React.createElement("select", {
+        id: "animal",
+        value: animal,
+        onChange: e => updateAnimal(e.target.value),
+        onBlur: e => updateAnimal(e.target.value),
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 46,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/React.createElement("option", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 52,
+          columnNumber: 13
+        }
+      }), ANIMALS.map(animal => /*#__PURE__*/React.createElement("option", {
+        key: animal,
+        value: animal,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54,
+          columnNumber: 15
+        }
+      }, animal)))), /*#__PURE__*/React.createElement("label", {
+        htmlFor: "breed",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 60,
+          columnNumber: 9
+        }
+      }, "Breed", /*#__PURE__*/React.createElement("select", {
+        disabled: !breeds.length,
+        id: "breed",
+        value: breed,
+        onChange: e => updateBreed(e.target.value),
+        onBlur: e => updateBreed(e.target.value),
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 62,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/React.createElement("option", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 69,
+          columnNumber: 13
+        }
+      }), breeds.map(breed => /*#__PURE__*/React.createElement("option", {
+        key: breed,
+        value: breed,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 71,
+          columnNumber: 15
+        }
+      }, breed)))), /*#__PURE__*/React.createElement("button", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 77,
+          columnNumber: 9
+        }
+      }, "Submit")), /*#__PURE__*/React.createElement(_ResultsDefault.default, {
+        pets: pets,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 79,
+          columnNumber: 7
+        }
+      }))
+    );
+  };
+  _s(SearchParams, "GeKwvU8HrY2QtxKFJ2QEqW+wLDU=", false, function () {
+    return [_useBreedListDefault.default];
+  });
+  _c = SearchParams;
+  exports.default = SearchParams;
+  var _c;
+  $RefreshReg$(_c, "SearchParams");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
