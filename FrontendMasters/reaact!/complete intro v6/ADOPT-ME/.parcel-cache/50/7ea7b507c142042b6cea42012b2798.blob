@@ -1,0 +1,47 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+var _Pet = require("./Pet");
+var _PetDefault = _parcelHelpers.interopDefault(_Pet);
+var _jsxFileName = "C:\\Users\\ll_ce\\Documents\\Léo\\Programação\\Studying\\FrontendMasters\\reaact!\\complete intro v6\\ADOPT-ME\\citr-v6-project\\10-error-boundaries\\src\\Results.js";
+const Results = ({pets}) => {
+  return (
+    /*#__PURE__*/React.createElement("div", {
+      className: "search",
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 5,
+        columnNumber: 5
+      }
+    }, !pets.length ? /*#__PURE__*/React.createElement("h1", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 7,
+        columnNumber: 9
+      }
+    }, "No Pets Found") : pets.map(pet => {
+      return (
+        /*#__PURE__*/React.createElement(_PetDefault.default, {
+          animal: pet.animal,
+          key: pet.id,
+          name: pet.name,
+          breed: pet.breed,
+          images: pet.images,
+          location: `${pet.city}, ${pet.state}`,
+          id: pet.id,
+          __self: undefined,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 11,
+            columnNumber: 13
+          }
+        })
+      );
+    }))
+  );
+};
+_c = Results;
+exports.default = Results;
+var _c;
+$RefreshReg$(_c, "Results");

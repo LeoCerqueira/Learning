@@ -1,0 +1,72 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require("react");
+  var _reactRouterDom = require("react-router-dom");
+  var _jsxFileName = "C:\\Users\\ll_ce\\Documents\\Léo\\Programação\\Studying\\FrontendMasters\\reaact!\\complete intro v6\\ADOPT-ME\\citr-v6-project\\10-error-boundaries\\src\\ErrorBoundary.js";
+  class ErrorBoundary extends _react.Component {
+    state = {
+      hasError: false
+    };
+    static getDerivedStateFromError() {
+      return {
+        hasError: true,
+        redirect: false
+      };
+    }
+    componentDidCatch(error, info) {
+      console.error("ErrorBoundary caught an error", error, info);
+    }
+    componentDidUpdate() {
+      if (this.state.hasError) {
+        setTimeout(() => this.setState({
+          redirect: true
+        }), 5000);
+      }
+    }
+    render() {
+      if (this.state.redirect) {
+        return (
+          /*#__PURE__*/React.createElement(_reactRouterDom.Redirect, {
+            to: "/",
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 21,
+              columnNumber: 14
+            }
+          })
+        );
+      } else if (this.state.hasError) {
+        return (
+          /*#__PURE__*/React.createElement("h2", {
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 24,
+              columnNumber: 9
+            }
+          }, "There was an error with this listing. ", /*#__PURE__*/React.createElement(_reactRouterDom.Link, {
+            to: "/",
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 25,
+              columnNumber: 49
+            }
+          }, "Click here"), " ", "to back to the home page or wait five seconds.")
+        );
+      }
+      return this.props.children;
+    }
+  }
+  exports.default = ErrorBoundary;
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
