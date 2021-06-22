@@ -34,7 +34,7 @@ class Details extends Component {
         <div>
           <h1>{name}</h1>
           <h2>{`${animal} - ${breed} - ${city}, ${state}`}</h2>
-          <button>Adopt {name}</button>
+          <button>Adopt me {name}</button>
           <p>{description}</p>
         </div>
       </div>
